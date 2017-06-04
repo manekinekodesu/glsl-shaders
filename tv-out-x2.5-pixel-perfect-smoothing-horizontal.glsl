@@ -72,7 +72,7 @@ COMPAT_VARYING vec4 TEX0;
 uniform COMPAT_PRECISION vec2 TextureSize;
 void main()
 {
-	bool result = (mod( floor(TEX0.x * (TextureSize.x*scaling/1.0)) ,5.0)==2.0);
+	bool result = (mod( floor(TEX0.x * (TextureSize.x*scaling)) ,5.0)==2.0);
 	
 	vec4 tmp;
 	tmp.xy = TEX0.xy;
