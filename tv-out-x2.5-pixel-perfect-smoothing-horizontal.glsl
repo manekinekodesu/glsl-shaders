@@ -118,10 +118,11 @@ void main()
 	vec4 col2 = COMPAT_TEXTURE(Texture, tmp.zy);
 	
 	// Mix based on the step result (0.0 = col1, 1.0 = 50/50 blend)
-	vec4 _color = mix(col1, mix(col1,col2,0.5), float(blend));
+	vec4 _color = blend?mix(col1,col2,0.5):col1;
 
 	FragColor = _color * BRIGHTNESS;
 	return;
 }
 
 #endif
+
